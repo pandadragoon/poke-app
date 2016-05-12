@@ -1,0 +1,74 @@
+/* Home Styles */
+
+.pokemon {
+  border: 10px solid tomato;
+  height: 23vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  h1 {
+    text-transform: capitalize;
+  }
+  a {
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    &:hover {
+      font-weight: bold;
+      color: black;
+    }
+    &:visited {
+      color: black;
+    }
+  }
+}
+
+.load-more {
+  color: white;
+  background-color: cornflowerblue;
+  width: 300px;
+  height: 80px;
+  font-size: 20px;
+  display: block;
+  margin: 30px auto;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.search {
+  width: 60%;
+  margin: 50px auto 30px auto;
+
+  input {
+    height: 40px;
+  }
+}
+
+.inner-ball {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 13.5vw;
+  width: 13.5vw;
+  background-color: white;
+  border-radius: 50%;
+  border: 10px solid black;
+  z-index: 2;
+}
+
+.lower-ball {
+  background-color: white;
+  height: 11vw;
+  border-top: 10px solid black;
+  z-index: 1;
+  width: 23vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
