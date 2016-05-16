@@ -58,7 +58,9 @@ export default class Pokemon extends React.Component {
 
     if(!_.isEmpty(this.state.pokeInfo)){
       name = this.state.pokeInfo.name;
-      url = this.state.pokeInfo.sprites.front_default;
+      if(this.state.pokeInfo.sprites.front_default !== null){
+        url = this.state.pokeInfo.sprites.front_default;
+      }
       stats = this.state.pokeInfo.stats.map((stat, idx)=>{
         return (
           <li key={idx} className='poke-info__stat-list__item'><p><strong>Name:</strong> {stat.stat.name}</p><p><strong>Base:</strong> {stat.base_stat}</p></li>
@@ -75,6 +77,7 @@ export default class Pokemon extends React.Component {
       <div className='poke-info'>
         <h1 className='poke-info__name'>{name}</h1>
         <img className='poke-info__img' style={{display: url.length === 0 ? 'none' : 'block'}} src={url} />
+        <h2 className='poke-info__img--none' style={{display: url.length === 0 ? 'block' : 'none'}}>No Image To Display</h2>
         <h3 className='poke-info__title'>Types</h3>
         <ul className='poke-info__type-list'>
           {types}
