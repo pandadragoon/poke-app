@@ -1,0 +1,55 @@
+.poke-info {
+  width: 80%;
+  margin: 10rem auto;
+  background-color: tomato;
+  padding: 5rem;
+  &__name {
+    color: white;
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+  }
+  &__img {
+    background-color: white;
+    padding: 2rem;
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__stat-list {
+    @extend .poke-info__list;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    p {
+      font-weight: normal;
+    }
+    strong {
+      font-weight: bold;
+    }
+  }
+  &__type-list {
+    @extend .poke-info__list;
+
+    &__item {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin-right: .8rem;
+    }
+  }
+}

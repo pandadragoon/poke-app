@@ -1,7 +1,6 @@
 /* @flow */
-import React, {PropTypes} from 'react';
+import React from 'react';
 import axios from 'axios';
-import _ from 'underscore';
 import {Link} from 'react-router';
 
 
@@ -37,7 +36,7 @@ export default class Home extends React.Component {
       let storedPokemon = JSON.parse(localStorage.getItem('pokemon'));
       let skip = this.state.skip + this.state.take;
       let take = this.state.take;
-      console.log(skip);
+
       this.setState({
         pokemon: storedPokemon,
         shownPokemon: storedPokemon.slice(0, take),
@@ -54,12 +53,11 @@ export default class Home extends React.Component {
     let skip = this.state.skip + this.state.take;
     let take = this.state.take;
     let shownPokemon = this.state.shownPokemon.concat(this.state.pokemon.slice(this.state.skip, this.state.skip + take));
-    console.log(this.state.pokemon.slice(this.state.skip, this.state.skip + take));
-    console.log(shownPokemon);
+
     this.setState({
       shownPokemon: shownPokemon,
       skip: skip
-    })
+    });
   }
 
   search(event: Object){
@@ -79,14 +77,6 @@ export default class Home extends React.Component {
       shownPokemon: pokemon,
       skip: 20
     });
-  }
-
-  selectPokemon(name: string, url: string, event: Object){
-    console.log('event', event);
-    console.log('name', name);
-    console.log('url', url);
-
-    this.context.router.push(`pokemon/${name}`);
   }
 
   render(): Object{
@@ -154,4 +144,4 @@ let styles = {
     textDecoration: 'none',
     color: 'black'
   }
-}
+};
